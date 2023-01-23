@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script>
+     document.getElementsByClassName("Btnsize").className="Outlinecolour";
+    function view(num) {
+
+        document.getElementById("topdisplay").value += num;
+    }
+    function solve() {
+        var Mathoperation = document.getElementById("topdisplay").value;
+        document.getElementById("result").value = Mathoperation;
+        var result = eval(Mathoperation);
+        document.getElementById("topdisplay").value = result;
+    }
+    function del() {
+        document.getElementById("topdisplay").value = " ";
+    }
+    function Clear() {
+        var Mathoperation = document.getElementById("topdisplay").value;
+        var Eliminate = Mathoperation.slice(0, Mathoperation.length - 1);
+        console.log(Eliminate);
+        document.getElementById("topdisplay").value = Eliminate;
+    }
+
+</script>
+
+<body >
+
+    <div style="text-align:center">
+    
+        <h1>Simple Calculator</h1>
+
+        <div class="outer_margin">
+            <div>
+
+                <input class="text-box" type="text" id="result">
+                <br>
+                <input class="text-box" type="text" id="topdisplay" placeholder="calc input">
+
+            </div>
+
+            <div class="Btn_space">
+                <button class=" Btnsize" onclick="view('1')">1</button>
+                <button class="Btnsize" onclick="view('2')">2</button>
+                <button class="Btnsize" onclick="view('3')">3</button>
+                <button class="Operator" onclick="del()">AC</button>
+            </div>
+
+
+            <div class="Btn_space">
+                <button class="Btnsize" onclick="view('4')">4</button>
+                <button class="Btnsize" onclick="view('5')">5</button>
+                <button class="Btnsize" onclick="view('6')">6</button>
+                <button class="Operator" onclick="Clear()">C</button>
+            </div>
+
+            <div class="Btn_space">
+                <button class="Btnsize" onclick="view('7')">7</button>
+                <button class="Btnsize" onclick="view('8')">8</button>
+                <button class="Btnsize" onclick="view('9')">9</button>
+                <button class="Operator" onclick="view('+')">+</button>
+            </div>
+
+            <div class="Btn_space">
+                <button class="Btnsize" onclick="view('.')">.</button>
+                <button class="Btnsize" onclick="view('0')">0</button>
+                <button class="Btnsize" onclick="view('%')">%</button>
+                <button class="Operator" onclick="view('^')">^</button>
+            </div>
+
+            <div class="Btn_space">
+                <button class="Operator" onclick="view('-')">-</button>
+                <button class="Operator" onclick="view('*')">*</button>
+                <button class="Operator" onclick="view('/')">/</button>
+                <button class="Operator" onclick="solve()">=</button>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+
+</html>
